@@ -1,0 +1,12 @@
+/*Sección para ponerle diseñito bonito a la pag con lo que tenemos de html */
+.button{
+    background-color: aqua;
+    border: 12px;
+    padding: 15px 32px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/*Pendiente: hacer que jale el diseño del botón*/

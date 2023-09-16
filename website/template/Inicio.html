@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, inicial-scale=1"/>
+    <title>{% block title%}FlyWeather{% endblock %}</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--Esta es la vista central en donde se dara a el usuario a elegir si desea poner su ticket o directamente la ciudad a consultar-->
 </head>
+    <title>Title</title>
+    <section class="textos-header">
+        <h1>Planifica tu día con precisión y descubre el clima en tiempo real.</h1>
+        <h1>PD: No se asusten, este diseño es nada más para ir viendo uwu</h1>
+    </section>
+    <div class= "wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-3.95,28.90 C124.72,157.20 397.29,-30.28 501.69,57.52 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #08f;"></path></svg></div>
 <body>
+    <img src="/static/iconclima.jpg" style= "width: 400px" alt="" class="img-clima"> 
+    <div class="contenedor-textos">
+        <h3></h3>
+    </div>
 
+
+    <section class = "chose method">
+        <article>
+            <p>Selecciona el método que gustes para consultar el clima </p>
+            <button class="button">
+                <a href="ticket" class="btn"> Ingresar Ticket</a>
+            </button>
+            <button class="button">
+                <a href="ciudad" class="btn"> Ingresar Ciudad</a>
+            </button>
+        </article>
+    </section>
 </body>
 </html>
