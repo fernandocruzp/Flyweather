@@ -10,7 +10,7 @@ class Buscador:
         if ticket in self.cacheTicket:
             return self.buscaCiudad(self.cacheTicket[ticket][0]), self.buscaCiudad(self.cacheTicket[ticket][1])
 
-        with open("dataset2.csv", mode='r') as csvLector:
+        with open("datasets/dataset2.csv", mode='r') as csvLector:
             csvCont = csv.DictReader(csvLector)
             for fila in csvCont:
                 if fila['num_ticket'] == ticket:
@@ -30,7 +30,7 @@ class Buscador:
         return clima
 
     def buscaClima(self,nombre):
-        with open("dataset1.csv", mode='r') as csvLector:
+        with open("datasets/dataset1.csv", mode='r') as csvLector:
             csvCont = csv.DictReader(csvLector)
             for fila in csvCont:
                 if fila['origin'] == nombre:
