@@ -1,4 +1,5 @@
 from flask import Blueprint,render_template
+from . import LlamaAPi
 
 vista = Blueprint('vista',__name__)
 
@@ -7,7 +8,7 @@ def inicio():
     return render_template("Inicio.html")
 
 @vista.route('/ticket')
-def ticket():
+def ticket():   
     return render_template("Ticket.html")
 
 @vista.route('/ciudad')
