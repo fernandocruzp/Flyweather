@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, inicial-scale=1"/>
     <title>{% block title%}Ticket{% endblock %}</title>
     <!--Vista donde el usuario pondra su ticket para ver las ciudades de salida y de destino y de ahí sacar el clima de la ciudad a donde va-->
+
 </head>
-    <title>Title</title>
-</head>
+    <title>Ticket</title>
+<h1>Ticket</h1>
+
+    <form method="POST">
+        <label>Ticket ID:</label>
+        <input type="text" name="ticket_id" required>
+        <br>
+        <br>
+        <input type="submit" value="Submit Ticket">
+    </form>
+
+    <h2>Clima:</h2>
+    <ul>
+        {% for ticket in tickets%}
+            <li><strong>Lugar: {{ ticket["Lugar"] }}</strong></li>
+            <li><strong>Temperatura: {{ ticket["temp"] }}</strong></li>
+            <li><strong>Sensación térmica: {{ ticket["feels_like"] }}</strong></li>
+            <li><strong>Temperatura minima: {{ ticket["temp_min"] }}</strong></li>
+            <li><strong>Temperatura máxima: {{ ticket["temp_max"] }}</strong></li>
+            <li><strong>Presión: {{ ticket["pressure"] }}</strong></li>
+            <li><strong>Humedad: {{ ticket["humidity"] }}</strong></li>
+        {% endfor %}
+
+    </ul>
 <body>
 
 </body>

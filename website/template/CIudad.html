@@ -7,5 +7,28 @@
     <!--vista donde directamente se escribe el nombre de la ciudad de la que quiere consultar el clima-->
 </head>
 <body>
+<h1>Ciudad</h1>
+
+    <form method="POST">
+        <label>Ciudad:</label>
+        <input type="text" name="ciudad" required>
+        <br>
+        <br>
+        <input type="submit" value="Submit Ticket">
+    </form>
+
+    <h2>Clima:</h2>
+    <ul>
+        {% for ticket in tickets%}
+            <li><strong>Lugar: {{ ticket["Lugar"] }}</strong></li>
+            <li><strong>Temperatura: {{ ticket["temp"] }}</strong></li>
+            <li><strong>Sensación térmica: {{ ticket["feels_like"] }}</strong></li>
+            <li><strong>Temperatura minima: {{ ticket["temp_min"] }}</strong></li>
+            <li><strong>Temperatura máxima: {{ ticket["temp_max"] }}</strong></li>
+            <li><strong>Presión: {{ ticket["pressure"] }}</strong></li>
+            <li><strong>Humedad: {{ ticket["humidity"] }}</strong></li>
+        {% endfor %}
+
+    </ul>
 </body>
 </html>

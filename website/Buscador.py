@@ -1,4 +1,4 @@
-import LlamaAPi
+from website import LlamaAPi
 import csv
 
 class Buscador:
@@ -10,7 +10,7 @@ class Buscador:
         if ticket in self.cacheTicket:
             return self.buscaCiudad(self.cacheTicket[ticket][0]), self.buscaCiudad(self.cacheTicket[ticket][1])
 
-        with open("datasets/dataset2.csv", mode='r') as csvLector:
+        with open("website/datasets/dataset2.csv", mode='r') as csvLector:
             csvCont = csv.DictReader(csvLector)
             for fila in csvCont:
                 if fila['num_ticket'] == ticket:
@@ -26,11 +26,12 @@ class Buscador:
 
         if clima:
             self.cache[nombre]=clima
-
+        n = {"Lugar": nombre}
+        clima.update(n)
         return clima
 
     def buscaClima(self,nombre):
-        with open("datasets/dataset1.csv", mode='r') as csvLector:
+        with open("website/datasets/dataset1.csv", mode='r') as csvLector:
             csvCont = csv.DictReader(csvLector)
             for fila in csvCont:
                 if fila['origin'] == nombre:
