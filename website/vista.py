@@ -8,7 +8,7 @@ buscador = Buscador.Buscador()
 
 @vista.route('/')
 def inicio():
-    return render_template("Inicio.html")
+    return render_template("Index.html")
 
 @vista.route('/ticket', methods=["GET","POST"])
 def ticket():

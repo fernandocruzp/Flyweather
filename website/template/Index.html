@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inicial-scale=1"/>
+    <title>{% block title%}FlyWeather{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Title</title>
+    <!--Esta es la vista central en donde se dara a el usuario a elegir si desea poner su ticket o directamente la ciudad a consultar-->
+</head>
+<body>
+<div class="background">
+<video class="video_background" src="/static/back.mp4" inline autoplay muted  ></video>
+
+</div>
+
+    <div class="card_top">
+        
+        <div class="txt_top">Descubre lo que el cielo tiene para ti.</div>
+         
+
+    </div>
+    <div class="card">
+        <div class="img_weather"></div>
+        <h4>FlyWeather</h4>
+        <h6>¿Qué deseas ingresar para conocer el clima?</h6>
+    
+        <div class="container">
+            <div class="details">
+                <a href="ciudad"><div class="btn">Ciudad</div></a>
+            </div>
+            <div class="details">
+                <a href="ticket"><div class="btn">Ticket</div></a>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
