@@ -18,7 +18,7 @@ class Buscador:
                 if fila['num_ticket'] == ticket:
                     self.cacheTicket[ticket]=[fila['origin'],fila['destination']]
                     return self.buscaCiudad(fila['origin']),self.buscaCiudad(fila['destination'])
-            return None
+            return None, None
 
     def buscaCiudad(self, nombre):
         if nombre in self.cache:
@@ -32,9 +32,10 @@ class Buscador:
 
         if clima:
             self.cache[nombre]=clima
-        n = {"Lugar": nombre}
-        clima.update(n)
-        return clima
+            n = {"Lugar": nombre}
+            clima.update(n)
+            return clima
+        return None
 
     def buscaClima(self,nombre):
         with open("website/datasets/dataset1.csv", mode='r') as csvLector:

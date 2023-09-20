@@ -20,15 +20,15 @@
 
     <h2>Clima:</h2>
     <ul>
-        {% for ticket in tickets%}
-            <li><strong>Lugar: {{ ticket["Lugar"] }}</strong></li>
-            <li><strong>Temperatura: {{ ticket["temp"] }}</strong></li>
-            <li><strong>Sensación térmica: {{ ticket["feels_like"] }}</strong></li>
-            <li><strong>Temperatura minima: {{ ticket["temp_min"] }}</strong></li>
-            <li><strong>Temperatura máxima: {{ ticket["temp_max"] }}</strong></li>
-            <li><strong>Presión: {{ ticket["pressure"] }}</strong></li>
-            <li><strong>Humedad: {{ ticket["humidity"] }}</strong></li>
-        {% endfor %}
+            {% for ticket in tickets%}
+                    <li><strong>Lugar: {{ ticket["Lugar"] }}</strong></li>
+                    <li><strong>Temperatura: {{ ticket["temp"] }}</strong></li>
+                    <li><strong>Sensación térmica: {{ ticket["feels_like"] }}</strong></li>
+                    <li><strong>Temperatura minima: {{ ticket["temp_min"] }}</strong></li>
+                    <li><strong>Temperatura máxima: {{ ticket["temp_max"] }}</strong></li>
+                    <li><strong>Presión: {{ ticket["pressure"] }}</strong></li>
+                    <li><strong>Humedad: {{ ticket["humidity"] }}</strong></li>
+            {% endfor %}
 
     </ul>
 <body>
