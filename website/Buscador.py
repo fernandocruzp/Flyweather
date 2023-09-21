@@ -1,4 +1,6 @@
 from website import LlamaAPi
+from website import matchingNames
+
 import csv
 
 class Buscador:
@@ -6,7 +8,7 @@ class Buscador:
         self.cache={}
         self.cacheTicket={}
 
-    def buscaTicket(self,ticket):
+    def buscaTicket(self, ticket):
         if ticket in self.cacheTicket:
             return self.buscaCiudad(self.cacheTicket[ticket][0]), self.buscaCiudad(self.cacheTicket[ticket][1])
 
@@ -18,11 +20,15 @@ class Buscador:
                     return self.buscaCiudad(fila['origin']),self.buscaCiudad(fila['destination'])
             return None
 
-    def buscaCiudad(self,nombre):
+    def buscaCiudad(self, nombre):
         if nombre in self.cache:
             return self.cache[nombre]
+        else:
+            nombre = matchingNames.matchea_ciudades(nombre)
+            if nombre in self.cache:
+                return self.cache[nombre]
 
-        clima= self.buscaClima(nombre)
+        clima = self.buscaClima(nombre)
 
         if clima:
             self.cache[nombre]=clima
