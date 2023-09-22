@@ -9,3 +9,4 @@ def realizaBusqueda(lat,lon):
         return respuesta.json()["main"]
     else:
         return "Error"
+

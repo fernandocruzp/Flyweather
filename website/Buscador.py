@@ -21,6 +21,7 @@ class Buscador:
             return None, None
 
     def buscaCiudad(self, nombre):
+        nombre.upper()
         if nombre in self.cache:
             return self.cache[nombre]
         else:
