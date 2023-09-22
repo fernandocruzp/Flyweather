@@ -14,6 +14,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_ticket(self):
         respuesta = self.cliente.post('/ticket', data={'ticket_id': 'kw9f0kwvZJmsukQy'})
+        
 
 
 

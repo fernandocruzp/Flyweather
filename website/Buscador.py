@@ -43,4 +43,6 @@ class Buscador:
             for fila in csvCont:
                 if fila['origin'] == nombre:
                     return LlamaAPi.realizaBusqueda(fila['origin_latitude'],fila['origin_longitude'])
+                elif fila['destination'] == nombre:
+                    return LlamaAPi.realizaBusqueda(fila['destination_latitude'], fila['destination_longitude'])
             return None
