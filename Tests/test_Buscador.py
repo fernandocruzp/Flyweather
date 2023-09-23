@@ -6,7 +6,7 @@ from website import LlamaAPi
 class TestBuscador(unittest.TestCase):
 
 
-    #TEST QUE VERIFICA SI SE BUSCA BIEN EL TICKET
+    """TEST QUE VERIFICA SI SE BUSCA BIEN EL TICKET"""
     def test_buscaTicket(self):
         origen = LlamaAPi.realizaBusqueda("19.4363", "-99.0721")
         n = {"Lugar": "MEX"}
@@ -19,22 +19,22 @@ class TestBuscador(unittest.TestCase):
         self.assertEquals(origen,origen2)
         self.assertEquals(destino,destino2)
 
-#REVISA QUE EL CACHE FUNCIONA
+    """REVISA QUE EL CACHE FUNCIONA"""
     def test_Cache(self):
         buscador = Buscador.Buscador()
-        #CACHE DEBE ESTAR VACÍO
+        """CACHE DEBE ESTAR VACÍO"""
         self.assertEquals(len(buscador.cache),0)
         resultado = buscador.buscaCiudad('MTY')
         self.assertEquals(len(buscador.cache), 1)
-        #OBTIENE CIUDAD DIRECTAMENTE DEL CACHE
+        """OBTIENE CIUDAD DIRECTAMENTE DEL CACHE"""
         resultado=buscador.buscaCiudad('MTY')
         self.assertEquals(len(buscador.cache),1)
         a,b=buscador.buscaTicket("PheImPzc32OUR8pL")
         self.assertEquals(len(buscador.cache), 2)
-        #REVISAMOS CACHETICKET
+        """REVISAMOS CACHETICKET"""
         self.assertEquals(len(buscador.cacheTicket),1)
 
-#VERIFICAMOS QUE FUNCIONE EL MÉTODO BUSCARCIUDAD()
+    """VERIFICAMOS QUE FUNCIONE EL MÉTODO BUSCARCIUDAD()"""
     def test_buscaClima(self):
         buscador = Buscador.Buscador()
         clima_MTY = LlamaAPi.realizaBusqueda("25.7785", "-100.107")
