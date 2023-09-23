@@ -6,12 +6,12 @@ vista = Blueprint('vista',__name__)
 
 buscador = Buscador.Buscador()
 
-#Vista de menú de inicio
+"""Vista de menú de inicio"""
 @vista.route('/')
 def inicio():
     return render_template("Index.html")
 
-#Vista de ticket
+"""Vista de ticket"""
 @vista.route('/ticket', methods=["GET","POST"])
 def ticket():
     if request.method == "POST":
@@ -21,7 +21,7 @@ def ticket():
         return render_template("Ticket.html", tickets=[ciudadA,ciudadB])
     return render_template("Ticket.html")
 
-#Vista de ciudad
+"""Vista de ciudad"""
 @vista.route('/ciudad', methods=["GET","POST"])
 def ciudad():
     if request.method == "POST":
