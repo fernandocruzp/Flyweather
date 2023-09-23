@@ -6,7 +6,9 @@ from website import LlamaAPi
 class TestBuscador(unittest.TestCase):
 
 
-    """TEST QUE VERIFICA SI SE BUSCA BIEN EL TICKET"""
+    """
+    TEST QUE VERIFICA SI SE BUSCA BIEN EL TICKET
+    """
     def test_buscaTicket(self):
         origen = LlamaAPi.realizaBusqueda("19.4363", "-99.0721")
         n = {"Lugar": "MEX"}
@@ -19,7 +21,9 @@ class TestBuscador(unittest.TestCase):
         self.assertEquals(origen,origen2)
         self.assertEquals(destino,destino2)
 
-    """REVISA QUE EL CACHE FUNCIONA"""
+    """
+    REVISA QUE EL CACHE FUNCIONA
+    """
     def test_Cache(self):
         buscador = Buscador.Buscador()
         """CACHE DEBE ESTAR VACÍO"""
@@ -34,7 +38,9 @@ class TestBuscador(unittest.TestCase):
         """REVISAMOS CACHETICKET"""
         self.assertEquals(len(buscador.cacheTicket),1)
 
-    """VERIFICAMOS QUE FUNCIONE EL MÉTODO BUSCARCIUDAD()"""
+    """
+    VERIFICAMOS QUE FUNCIONE EL MÉTODO BUSCARCIUDAD()
+    """
     def test_buscaClima(self):
         buscador = Buscador.Buscador()
         clima_MTY = LlamaAPi.realizaBusqueda("25.7785", "-100.107")

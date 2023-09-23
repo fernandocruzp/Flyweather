@@ -3,7 +3,9 @@ from website import LlamaAPi
 
 class TestLlamaAPi(unittest.TestCase):
 
-"""REVISAMOS QUE LA LLAMADA A LA API SE HAGA CORRECTAMENTE"""
+    """
+    REVISAMOS QUE LA LLAMADA A LA API SE HAGA CORRECTAMENTE
+    """
     def test_peticiones(self):
         resultado = LlamaAPi.realizaBusqueda("25.7785", "-100.107")
         assert  resultado["temp"] != None

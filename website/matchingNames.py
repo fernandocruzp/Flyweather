@@ -1,6 +1,8 @@
 from thefuzz import process
 
-"""Regresa el nombre de la ciudad recibido en el tipo adecuado para su búsqueda"""
+"""
+Regresa el nombre de la ciudad recibido en el tipo adecuado para su búsqueda
+"""
 def matchea_ciudades(recibido):
     return mejor_match(recibido).upper()
 
@@ -17,11 +19,15 @@ ciudades_real = ['toluca', 'tlc', 'monterrey', 'mty', 'ciudad de mexico', 'mex',
                  'yvr', 'parís', 'cdg', 'ciudad juaréz', 'cjs', 'zacatecas', 'zcl', 'ámsterdam', 'ams',
                  'atlanta', 'atl', 'ciudad obregon', 'cen', 'madrid', 'mad', 'santiago', 'scl']
 
-"""De la lista de ciudades, regresa el código IATA de aquella que tiene mayor parecido a el nombre de la ciudad recibida"""
+"""
+De la lista de ciudades, regresa el código IATA de aquella que tiene mayor parecido a el nombre de la ciudad recibida
+"""
 def mejor_match(ciudadd):
     ciudadd.lower()
     closest, ratio = process.extractOne(ciudadd, ciudades_real)
-    """En caso de que se haya ingresado un código IATA"""
+    """
+    En caso de que se haya ingresado un código IATA
+    """
     if len(ciudadd) == 3 or len(closest) == 3:
         return closest
     index = ciudades_real.index(closest)
