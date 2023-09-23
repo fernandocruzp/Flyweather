@@ -1,11 +1,11 @@
 # Flyweather
 
 ## Tabla de Contenidos
-1. [Definición del Problema](#definicion-del-problema)
-2. [Análisis del Problema](#analisis-del-problema)
+1. [Definición del Problema](#definición-del-problema)
+2. [Análisis del Problema](#análisis-del-problema)
 3. [Mejor Alternativa](#mejor-alternativa)
 4. [Herramientas utilizadas](#herramientas-utilizadas)
-5. [Ejecución](#ejecucion)
+5. [Ejecución](#ejecución)
 
 ## Definición del Problema
 ***
