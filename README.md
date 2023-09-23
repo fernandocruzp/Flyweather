@@ -43,7 +43,9 @@ así como ser robusto a errores de escritura.
 Para resolver la parte de la obtención del clima, se usrá alguna API meteorológica, sin embargo, como se 
 usará alguna versión gratis esto nos forzará a utilizar un caché para almacenar el clima de las ciudades que se vayan
 buscando y de esta manera no hacer peticiones a la API que ya se han hecho previamente. 
+
 :) 
+
 Para solucionar la demanda de que el programa sea robusto a que se proporcione el nombre de la ciudad, y no el código 
 IATA, así como la incorrecta escritura de este, se usará un algoritmo para encontrar la compatibilidad(?) entre dos 
 string, así como relacionar el nombre de la ciudad con su código IATA.
@@ -53,8 +55,9 @@ string, así como relacionar el nombre de la ciudad con su código IATA.
  * **OpenWeatherMap** - Se seleccionó usar OpenWeatherMap por la sencillez de su uso, además de que la versión gratis 
     cumple completamente con los propósitos para los que se requiere.
  * **algo** - algo mas 
- * **thefuzz** - para solucionar el problema de los mispelled names se usará la función *extractOne()* de la paquetería  
-                 thefuzz, la cual usa Levenshtein para calcular que tanta diferencia existen entre dos cadenas.
+ * **thefuzz** - para solucionar el problema de los mispelled names se usará la función *extractOne()* de la paquetería
+   thefuzz, la cual usa Levenshtein para encontrar de una lista de strings a aquella cadena que tiene mayor coincidencia
+   con el string dado.
  * **GitHub** - al ser la primera vez creando pruebas unitarias en Python, se ha revisado varios repositorios en GitHub
                 para darse una idea de cómo realizarlas, en especial se ha tomado en cuenta al usuario
                  [DiegoPartida13](https://github.com/DiegoPartida13) del archivo *Proyecto1/Proyecto01/test/test_Ayuda_API.py*
