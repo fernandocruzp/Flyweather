@@ -9,17 +9,18 @@ from website import LlamaAPi
 
 class TestLlamaAPi(unittest.TestCase):
 
+#REVISAMOS QUE LA LLAMADA A LA API SE HAGA CORRECTAMENTE
     def test_peticiones(self):
         resultado = LlamaAPi.realizaBusqueda("25.7785", "-100.107")
-        assert resultado.status_code == 200
-        #assert  nombreCiudad == 'Monterrey'
-        #assert nombrePais == 'MX'
+        assert  resultado["temp"] != None
+        assert resultado["feels_like"] != None
+        assert resultado["temp_min"] != None
+        assert resultado["temp_max"] != None
+        assert resultado["pressure"] != None
+        assert resultado["humidity"] != None
+        resultado = LlamaAPi.realizaBusqueda("DAS", "DSA")
+        assert resultado== "Error"
 
-    """
-    def test_realizaBusqueda(self):
-        nombreCiudad = resultado["name"]
-        nombrePais = resultado['sys']['country']
-    
-    """
+
 if __name__ == '__main__':
     unittest.main()
