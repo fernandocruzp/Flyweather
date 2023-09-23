@@ -1,15 +1,9 @@
 import unittest
-import sys
-sys.path.insert(0, '..')
-#sys.path.append('..')
-#import website
 from website import LlamaAPi
-#from LlamaAPi import realizaBusqueda
-
 
 class TestLlamaAPi(unittest.TestCase):
 
-#REVISAMOS QUE LA LLAMADA A LA API SE HAGA CORRECTAMENTE
+"""REVISAMOS QUE LA LLAMADA A LA API SE HAGA CORRECTAMENTE"""
     def test_peticiones(self):
         resultado = LlamaAPi.realizaBusqueda("25.7785", "-100.107")
         assert  resultado["temp"] != None
