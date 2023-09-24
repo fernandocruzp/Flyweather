@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}Ciudad{% endblock %}</title>
     <style>
+
+         /* Estilos para el cuerpo del documento */
         body {
             text-align: center;
             margin: 0;
@@ -13,6 +15,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        /* Estilos para el contenedor de búsqueda */
         #search-container {
             background-color: #e6e6e6;
             margin: 1cm auto 0 auto; /* Margen superior de 0 para el contenedor */
@@ -24,6 +27,7 @@
             color: #D9D9D9;
         }
 
+        /* Estilos para el título "FlyWeather" */
         #fly-weather {
             color: #232323;
             padding: 0.7cm 1cm;
@@ -41,6 +45,7 @@
             padding: 0;
         }
 
+        /* Estilos para los elementos de lista */
         ul li {
             margin-bottom: 5px; /* Añade espacio vertical entre los elementos de la lista */
         }
@@ -51,16 +56,19 @@
             padding-bottom: 10px; /* Espacio entre la línea y el siguiente elemento */
         }
 
+        /* Estilos para el formulario de búsqueda */
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* Estilos para etiquetas */
         label {
             margin-bottom: 10px;
         }
 
+        /* Estilos para la caja de búsqueda */
         .search-box {
             display: flex;
             align-items: center;
@@ -68,6 +76,7 @@
             margin-bottom: 20px;
         }
 
+        /* Estilos para el campo de texto de búsqueda */
         input[type="text"] {
             flex: 1;
             padding: 10px;
@@ -76,6 +85,7 @@
             color: #232323;
         }
 
+        /* Estilos para el botón de búsqueda */
         .search-button {
             background-color: #007BFF;
             color: #fff;
@@ -89,6 +99,7 @@
             background-color: #0056b3;
         }
 
+         /* Estilos para las imágenes */
         #top-flyweather-image {
             position: fixed;
             top: 35px;
@@ -239,6 +250,7 @@
 <body>
 <div id="search-container">
     <div id="fly-weather">FlyWeather</div>
+     <!-- Contenedor de búsqueda y título "FlyWeather" -->
     <form method="POST">
         <div class="search-box">
             <input type="text" name="ciudad" id="ciudad" required placeholder="Buscar ciudad...">
@@ -247,6 +259,7 @@
     </form>
 </div>
 
+<!-- Imágenes y contenido relacionado con el clima -->
 <!-- Agrega las imagenes -->
 <img id="top-flyweather-image" src="/static/logo.png" alt="logo de FlyWeather">
 <img id="top-alta-image" src="/static/alta.png" alt="Temperatura Máxima">
