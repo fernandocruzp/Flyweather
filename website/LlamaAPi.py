@@ -7,9 +7,12 @@ def realizaBusqueda(lat,lon):
     respuesta = requests.get(f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={llave}")
     if respuesta.status_code == 200:
         """
-        Regresamos solamente la parte main de la respuesta del json
+        Regresamos solamente la parte main de la respuesta del json, y el clima de la parte de weather
         """
-        return respuesta.json()["main"]
+        clima = respuesta.json()["main"]
+        n = {"clima": respuesta.json()["weather"][0]["main"]}
+        clima.update(n)
+        return clima
     else:
         return "Error"
 

@@ -111,7 +111,7 @@
 
         #top-soleado-image {
             position: relative;
-            top: -50px;
+            top: -35px;
             left: 35px;
             width: 300px;
             height: auto; /* Esto mantendrá la proporción original de la imagen */
@@ -148,7 +148,7 @@
         #top-baja-image {
             position: fixed;
             top: 180px;
-            right: 550px;
+            right: 650px;
             width: 140px;
             height: auto; /* Esto mantendrá la proporción original de la imagen */
             z-index: 2;
@@ -244,6 +244,13 @@
         body.dark-mode input[type="text"] {
             border: 1px solid #c7c7c7;
             color: #c7c7c7;
+
+        }
+        .video_background{
+            width: 100%;
+            <he></he>ight: 100%;
+            position: fixed;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -261,7 +268,7 @@
 
 <!-- Imágenes y contenido relacionado con el clima -->
 <!-- Agrega las imagenes -->
-<img id="top-flyweather-image" src="/static/logo.png" alt="logo de FlyWeather">
+<a href="\" ><img id="top-flyweather-image" src="/static/logo.png" alt="logo de FlyWeather"></a>
 <img id="top-alta-image" src="/static/alta.png" alt="Temperatura Máxima">
 <img id="top-baja-image" src="/static/baja.png" alt="Temperatura mínima">
 
@@ -273,16 +280,16 @@
         {% for ticket in tickets %}
             {% if ticket != None %}
                 <li><strong>Lugar: {{ ticket["Lugar"] }}</strong></li>
-                <li><strong>Temperatura: {{ ticket["temp"] }}</strong></li>
-                    {% if ticket["temp"]>298 %}
+                <li><strong>Temperatura: {{ ticket["temp"] }} </strong></li>
+                    {% if ticket["clima"]=="Clear" %}
                         <img id="top-soleado-image" src="/static/soleado.png" alt="soleado">
                     {% endif %}
 
-                    {% if ticket["temp"] > 275 and ticket["temp"] < 298 %}
+                    {% if ticket["clima"]=="Clouds" %}
                             <img id="top-nublado-image" src="/static/nublado.png" alt="nublado">
                     {% endif %}
 
-                    {% if ticket["temp"]<275 %}
+                    {% if ticket["clima"]=="Rain" or ticket["clima"]=="Thunderstorm" %}
                         <img id="top-nubes-image" src="/static/nubes.png" alt="nubes">
                     {% endif %}
             {% else %}

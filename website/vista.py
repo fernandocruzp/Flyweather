@@ -23,7 +23,7 @@ def ticket():
         print(ticket_id)
         ciudadA, ciudadB = buscador.buscaTicket(ticket_id)
         return render_template("Ticket.html", tickets=[ciudadA,ciudadB])
-    return render_template("Ticket.html")
+    return render_template("Ticket.html",tickets=[None,None])
 
 
 """
