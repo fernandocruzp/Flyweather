@@ -516,10 +516,8 @@
 <!-- Botón para activar el modo oscuro -->
 <button id="dark-mode-button">Modo Oscuro</button>
 
-<!-- Barra lateral para desplazarse hacia abajo -->
-    <div id="scroll-sidebar">
-        <div id="scroll-button"></div>
-    </div>
+    <!-- Botón para volver al menú anterior -->
+    <button id="back-button">Volver al Menú Anterior</button>
 
 <script>
     const darkModeButton = document.getElementById('dark-mode-button');
@@ -527,6 +525,12 @@
 
     darkModeButton.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
+    });
+
+    const backButton = document.getElementById('back-button');
+
+    backButton.addEventListener('click', () => {
+        window.location.href = 'http://127.0.0.1:5000/';
     });
 </script>
 
