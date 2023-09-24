@@ -45,6 +45,16 @@
             padding: 0;
         }
 
+        ul li {
+            margin-bottom: 10px; /* Añade espacio vertical entre los elementos de la lista */
+        }
+
+        /* Agrega una línea divisoria horizontal entre los elementos de la lista */
+        ul li:not(:last-child) {
+            border-bottom: 1px solid #232323; /* Cambia el color y el estilo de la línea */
+            padding-bottom: 10px; /* Espacio entre la línea y el siguiente elemento */
+        }
+
 
         /* Estilos para el formulario de búsqueda */
         form {
@@ -101,9 +111,9 @@
 
         #top-soleado-image {
             position: relative;
-            top: -35px;
-            left: 35px;
-            width: 300px;
+            top: -20px;
+            left: 5px;
+            width: 250px;
             height: auto; /* Esto mantendrá la proporción original de la imagen */
             z-index: 3;
         }
@@ -138,7 +148,7 @@
         #top-baja-image {
             position: fixed;
             top: 180px;
-            right: 650px;
+            right: 550px;
             width: 140px;
             height: auto; /* Esto mantendrá la proporción original de la imagen */
             z-index: 2;
