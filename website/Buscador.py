@@ -1,77 +1,80 @@
 from website import LlamaAPi
 from website import matchingNames
-
 import csv
 
 class Buscador:
     def __init__(self):
-        self.cache={}
-        self.cacheTicket={}
+        """
+        Inicializa una instancia de la clase Buscador.
+        Crea cachés para resultados de búsqueda de clima por nombre de ciudad y número de ticket.
+        """
+        self.cache = {}  # Caché para almacenar resultados de búsqueda de clima por nombre de ciudad
+        self.cacheTicket = {}  # Caché para almacenar resultados de búsqueda de clima por número de ticket
 
-    """
-    Busca ticket en archivo csv y regresa clima de ciudad de origen y destino
-    """
     def buscaTicket(self, ticket):
-        """Revisa caché para evitar búsquedas de más"""
+        """
+        Busca un ticket en un archivo CSV y devuelve el clima de la ciudad de origen y destino asociada al ticket.
+        
+        Args:
+            ticket (str): Número de ticket que se desea buscar.
+
+        Returns:
+            tuple: Una tupla que contiene el clima de la ciudad de origen y destino (en ese orden).
+        """
         if ticket in self.cacheTicket:
             return self.buscaCiudad(self.cacheTicket[ticket][0]), self.buscaCiudad(self.cacheTicket[ticket][1])
 
-        """
-        Revisamos dataset2 para buscar ticket
-        """
         with open("website/datasets/dataset2.csv", mode='r') as csvLector:
             csvCont = csv.DictReader(csvLector)
             for fila in csvCont:
                 if fila['num_ticket'] == ticket:
-                    """
-                    Agregamos ticket al caché
-                    """
-                    self.cacheTicket[ticket]=[fila['origin'],fila['destination']]
-                    return self.buscaCiudad(fila['origin']),self.buscaCiudad(fila['destination'])
+                    self.cacheTicket[ticket] = [fila['origin'], fila['destination']]
+                    return self.buscaCiudad(fila['origin']), self.buscaCiudad(fila['destination'])
             return None, None
 
-    """
-    Revisamos ciudad en archivo csv y regresa clima de ciudad
-    """
     def buscaCiudad(self, nombre):
-        nombre.upper()
-        """Revisamos cache"""
+        """
+        Busca una ciudad en un archivo CSV y devuelve el clima asociado a la ciudad.
+        
+        Args:
+            nombre (str): Nombre de la ciudad que se desea buscar.
+
+        Returns:
+            dict: Un diccionario que contiene información sobre el clima de la ciudad.
+        """
+        nombre = nombre.upper()  # Convertimos el nombre a mayúsculas
+
         if nombre in self.cache:
             return self.cache[nombre]
         else:
-            """
-            Utilizamos módulo mathcinNmes para encontrar la ciudad con el nombre más parecido al introducido
-            """
             nombre = matchingNames.matchea_ciudades(nombre)
             if nombre in self.cache:
                 return self.cache[nombre]
 
         clima = self.buscaClima(nombre)
-        """
-        Si la llamada a nuestra API es diferente a error
-        """
+       
         if clima:
-            self.cache[nombre]=clima
+            self.cache[nombre] = clima
             n = {"Lugar": nombre}
             clima.update(n)
             return clima
         return None
 
-    def buscaClima(self,nombre):
+    def buscaClima(self, nombre):
         """
-        Buscamos ciudad en archivo csv
+        Busca el clima de una ciudad en un archivo CSV y realiza una llamada a la API para obtener el clima actual.
+        
+        Args:
+            nombre (str): Nombre de la ciudad de la que se desea obtener el clima.
+
+        Returns:
+            dict: Un diccionario que contiene información sobre el clima de la ciudad.
         """
         with open("website/datasets/dataset1.csv", mode='r') as csvLector:
             csvCont = csv.DictReader(csvLector)
             for fila in csvCont:
                 if fila['origin'] == nombre:
-                    """
-                    Realizamos llamada a la API
-                    """
-                    return LlamaAPi.realizaBusqueda(fila['origin_latitude'],fila['origin_longitude'])
+                    return LlamaAPi.realizaBusqueda(fila['origin_latitude'], fila['origin_longitude'])
                 elif fila['destination'] == nombre:
-                    """
-                    Realizamos llamada a la API
-                    """
                     return LlamaAPi.realizaBusqueda(fila['destination_latitude'], fila['destination_longitude'])
             return None

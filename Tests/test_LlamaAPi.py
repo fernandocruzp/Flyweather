@@ -3,10 +3,11 @@ from website import LlamaAPi
 
 class TestLlamaAPi(unittest.TestCase):
 
-    """
+    
+    def test_peticiones(self):
+        """
     REVISAMOS QUE LA LLAMADA A LA API SE HAGA CORRECTAMENTE
     """
-    def test_peticiones(self):
         resultado = LlamaAPi.realizaBusqueda("25.7785", "-100.107")
         assert  resultado["temp"] != None
         assert resultado["feels_like"] != None

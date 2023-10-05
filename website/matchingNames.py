@@ -1,13 +1,17 @@
 from thefuzz import process
 from flask import abort
 
-"""
-Regresa el nombre de la ciudad recibido en el tipo adecuado para su búsqueda
-"""
-
 def matchea_ciudades(recibido):
-    return mejor_match(recibido).upper()
+    """
+    Realiza una búsqueda de la ciudad más parecida a la entrada proporcionada y la devuelve en mayúsculas.
+    
+    Args:
+        recibido (str): El nombre de la ciudad que se desea buscar.
 
+    Returns:
+        str: El nombre de la ciudad más parecida en mayúsculas.
+    """
+    return mejor_match(recibido).upper()
 
 ciudades_real = ['toluca', 'tlc', 'monterrey', 'mty', 'ciudad de mexico', 'mex', 'tijuana', 'tij',
                  'hermosillo', 'hmo', 'ciudad del carmen', 'cme', 'chetumal', 'ctm',
@@ -23,12 +27,16 @@ ciudades_real = ['toluca', 'tlc', 'monterrey', 'mty', 'ciudad de mexico', 'mex',
                  'yvr', 'parís', 'cdg', 'ciudad juaréz', 'cjs', 'zacatecas', 'zcl', 'ámsterdam', 'ams',
                  'atlanta', 'atl', 'ciudad obregon', 'cen', 'madrid', 'mad', 'santiago', 'scl']
 
-"""
-De la lista de ciudades, regresa el código IATA de aquella que tiene mayor parecido a el nombre de la ciudad recibida
-"""
-
-
 def mejor_match(ciudadd):
+    """
+    Encuentra la ciudad más parecida a la entrada proporcionada y la devuelve.
+    
+    Args:
+        ciudadd (str): El nombre de la ciudad que se desea buscar.
+
+    Returns:
+        str: El nombre de la ciudad más parecida.
+    """
     ciudadd.lower()
 
     if es_valido(ciudadd):
@@ -39,14 +47,21 @@ def mejor_match(ciudadd):
     if ratio < 75:
         abort(500)
 
-    """
-    En caso de que se haya ingresado un código IATA
-    """
     if len(ciudadd) == 3 or len(closest) == 3:
         return closest
     index = ciudades_real.index(closest)
     return ciudades_real[index + 1]
 
 def es_valido(nombre):
+    """
+    Verifica si el nombre contiene dígitos numéricos.
+    
+    Args:
+        nombre (str): El nombre a verificar.
+
+    Returns:
+        bool: True si el nombre contiene dígitos, False en caso contrario.
+    """
     return any(char.isdigit() for char in nombre)
+
 
