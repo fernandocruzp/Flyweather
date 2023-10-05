@@ -37,3 +37,9 @@ def ciudad():
         ciudadA= buscador.buscaCiudad(ciudad)
         return render_template("CIudad.html", tickets=[ciudadA])
     return render_template("CIudad.html")
+
+
+@vista.errorhandler(500)
+def internal_error(e):
+    return render_template('500.html'), 500
+
