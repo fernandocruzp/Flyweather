@@ -55,8 +55,8 @@ class Buscador:
        
         if clima:
             self.cache[nombre] = clima
-            n = {"Lugar": nombre}
-            clima.update(n)
+            nombreAgrega = {"Lugar": nombre}
+            clima.update(nombreAgrega)
             return clima
         return None
 

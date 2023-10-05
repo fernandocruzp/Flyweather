@@ -16,8 +16,8 @@ def realizaBusqueda(lat, lon):
     
     if respuesta.status_code == 200:
         clima = respuesta.json()["main"]
-        n = {"clima": respuesta.json()["weather"][0]["main"]}
-        clima.update(n)
+        estadoCLima = {"clima": respuesta.json()["weather"][0]["main"]}
+        clima.update(estadoClima)
         return clima
     else:
         return "Error en la solicitud de clima"

@@ -28,7 +28,6 @@ def ticket():
     """
     if request.method == "POST":
         ticket_id = request.form.get("ticket_id")
-        print(ticket_id)
         ciudadA, ciudadB = buscador.buscaTicket(ticket_id)
         return render_template("Ticket.html", tickets=[ciudadA, ciudadB])
     return render_template("Ticket.html", tickets=[None, None])
@@ -47,7 +46,6 @@ def ciudad():
     """
     if request.method == "POST":
         ciudad = request.form.get("ciudad")
-        print(ciudad)
         ciudadA = buscador.buscaCiudad(ciudad)
         return render_template("CIudad.html", tickets=[ciudadA])
     return render_template("CIudad.html")
