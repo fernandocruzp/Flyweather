@@ -16,7 +16,7 @@ def realizaBusqueda(lat, lon):
     
     if respuesta.status_code == 200:
         clima = respuesta.json()["main"]
-        estadoCLima = {"clima": respuesta.json()["weather"][0]["main"]}
+        estadoClima = {"clima": respuesta.json()["weather"][0]["main"]}
         clima.update(estadoClima)
         return clima
     else:
