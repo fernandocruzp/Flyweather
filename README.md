@@ -54,7 +54,8 @@ string, así como relacionar el nombre de la ciudad con su código IATA.
 ***
  * **OpenWeatherMap** - Se seleccionó usar OpenWeatherMap por la sencillez de su uso, además de que la versión gratis 
     cumple completamente con los propósitos para los que se requiere.
- * **FLASK** - Utilizamos la paquetería flask como framework para realizar nuestra página web.
+ * **FLASK** - Utilizamos la paquetería flask como framework para realizar nuestra página web ya que este nos permite crear
+   aplicaciones web de manera rapida y con un minimo número de lineas de codigo.
  * **requests** - Para realizar la llamada a la API 
  * **thefuzz** - para solucionar el problema de los mispelled names se usará la función *extractOne()* de la paquetería
    thefuzz, la cual usa Levenshtein para encontrar de una lista de strings a aquella cadena que tiene mayor coincidencia
@@ -70,11 +71,17 @@ Requisitos previos.
 +python3
 +instalación de las siguientes paqueterías de python:
     *Flask
+      $ pip install Flask
     *thefuzz
+      $ pip install thefuzz
     *requests
+      $ pýthon -m pip install requests
 En la raiz del proyecto ./FlyWeather escriba el comando python main.py
 Con esto se iniciará el servidor de flask, una vez se allá iniciado, en su navegador web ingrese a http://127.0.0.1:5000/
 
 Para ejecución de de las pruebas unitarias:
-En la raiz del proyecto ./FlyWeather escriba el comando python Test/Test.py python Test/test_Buscador.py python Test/test_LlamaAPi.py 
+En la raiz del proyecto ./FlyWeather escriba el comando 
+$ python Test/Test.py python 
+$ Test/test_Buscador.py 
+$ python Test/test_LlamaAPi.py 
 
