@@ -1,5 +1,6 @@
 from website import LlamaAPi
 from website import matchingNames
+from flask import abort
 import csv
 
 class Buscador:
@@ -30,7 +31,7 @@ class Buscador:
                 if fila['num_ticket'] == ticket:
                     self.cacheTicket[ticket] = [fila['origin'], fila['destination']]
                     return self.buscaCiudad(fila['origin']), self.buscaCiudad(fila['destination'])
-            return None, None
+            abort(400)
 
     def buscaCiudad(self, nombre):
         """
@@ -42,7 +43,7 @@ class Buscador:
         Returns:
             dict: Un diccionario que contiene información sobre el clima de la ciudad.
         """
-        nombre = nombre.upper()  # Convertimos el nombre a mayúsculas
+        nombre = nombre.upper()
 
         if nombre in self.cache:
             return self.cache[nombre]

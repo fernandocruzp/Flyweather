@@ -51,7 +51,7 @@ def ciudad():
     return render_template("CIudad.html")
 
 @vista.errorhandler(500)
-def internal_error(e):
+def internal_errorC(e):
     """
     Manejador de errores para errores internos del servidor (código 500).
     Renderiza la página 500.html en caso de un error interno.
@@ -63,3 +63,18 @@ def internal_error(e):
         render_template: Una plantilla HTML renderizada de la página de error 500.
     """
     return render_template('500.html'), 500
+
+@vista.errorhandler(400)
+def internal_errorT(e):
+    """
+    Manejador de errores para errores internos del servidor (código 500).
+    Renderiza la página 500.html en caso de un error interno.
+
+    Args:
+        e: El error que se ha producido.
+
+    Returns:
+        render_template: Una plantilla HTML renderizada de la página de error 500.
+    """
+    return render_template('400.html'), 400
+
