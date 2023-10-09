@@ -1,5 +1,9 @@
 # Flyweather
-
+##Integrantes:
+*Cruz Pineda Fernando
+*Marquéz Corona Danna Lizette
+*Flores Carrillo Itzel Paola
+*Espinosa Roque Rebeca
 ## Tabla de Contenidos
 1. [Definición del Problema](#definición-del-problema)
 2. [Análisis del Problema](#análisis-del-problema)
