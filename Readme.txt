@@ -33,3 +33,12 @@ python Test / t e s t B u s c a d o r . py
 API:
 python Test / test LlamaAPI . py
 ¡Ahora estás listo para configurar, ejecutar y probar FlyWeather!
+
+
+
+**Integrantes:
+
+    Cruz Pineda Fernando
+    Marquéz Corona Danna Lizette
+    Flores Carrillo Itzel Paola
+    Espinosa Roque Rebeca
