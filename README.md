@@ -1,16 +1,18 @@
 # Flyweather
-#Integrantes:
-*Cruz Pineda Fernando
-*Marquéz Corona Danna Lizette
-*Flores Carrillo Itzel Paola
-*Espinosa Roque Rebeca
-## Tabla de Contenidos
-1. [Definición del Problema](#definición-del-problema)
-2. [Análisis del Problema](#análisis-del-problema)
-3. [Mejor Alternativa](#mejor-alternativa)
-4. [Herramientas utilizadas](#herramientas-utilizadas)
-5. [Ejecución](#ejecución)
 
+## Tabla de Contenidos
+1. [Integrantes](#integrantes)
+2. [Definición del Problema](#definición-del-problema)
+3. [Análisis del Problema](#análisis-del-problema)
+4. [Mejor Alternativa](#mejor-alternativa)
+5. [Herramientas utilizadas](#herramientas-utilizadas)
+6. [Ejecución](#ejecución)
+
+## Integrantes:
+* Cruz Pineda Fernando
+* Marquéz Corona Danna Lizette
+* Flores Carrillo Itzel Paola
+* Espinosa Roque Rebeca
 ## Definición del Problema
 ***
 El problema consiste en desarrollar una aplicación de software que proporcione información actualizada sobre el clima 
